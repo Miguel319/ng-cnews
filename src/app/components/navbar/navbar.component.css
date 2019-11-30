@@ -13,6 +13,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 6vh;
+  max-height: 6vh;
   position: fixed;
   top: 0;
   background: #fafafa;
@@ -25,6 +26,9 @@ nav {
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
+}
+
+#logo a {
   text-decoration: none;
 }
 

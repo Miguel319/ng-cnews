@@ -1,14 +1,16 @@
 <div id="myNav">
   <nav>
     <div id="logo">
-      <a>NG-CNews</a>
+      <a [routerLink]="['home']">NG-CNews</a>
     </div>
 
     <ul id="nav-links">
-      <li><a>Home</a></li>
-      <li><a>Menu</a></li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/breaking-news']">Breaking News</a>
+      </li>
+      <li><a>Everything</a></li>
       <li><a>About</a></li>
     </ul>
   </nav>
 </div>
-  <div id="line"></div>
+<div id="line"></div>
