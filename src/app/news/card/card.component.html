@@ -1,1 +1,29 @@
-<p>card works!</p>
+<!--<div class="wrapper" *ngIf="article">
+  <div class="card">
+    <div class="layer"></div>
+    <div class="content">
+      <div class="image">
+        <img [src]="article.urlToImage" alt="article.title" />
+      </div>
+
+      <p>
+        {{ article.content }}
+      </p>
+      <div class="source">
+        <h4><b>Source: </b>{{ article.source }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+--->
+
+<div class="card">
+  <img [src]="article.urlToImage" alt="{{ article.title }}" />
+  <div class="card-content">
+    <p>{{ article.content }}</p>
+  </div>
+
+  <div class="card-info">
+    <a><i class="fas fa-eye"></i> View article</a>
+  </div>
+</div>

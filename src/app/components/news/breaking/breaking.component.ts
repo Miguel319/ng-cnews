@@ -8,7 +8,7 @@ import { Article } from "../../../models/article.model";
   styleUrls: ["./breaking.component.css"]
 })
 export class BreakingComponent implements OnInit {
-  news: Article[];
+  articles: Article[];
 
   constructor(private newsService: NewsService) {}
 
@@ -19,7 +19,7 @@ export class BreakingComponent implements OnInit {
   getUSNews() {
     this.newsService.getTopHeadlinesInTheUs().subscribe(
       (res: Article[]) => {
-        this.news = res;
+        this.articles = res;
         console.log(res);
       },
       err => console.log(err)

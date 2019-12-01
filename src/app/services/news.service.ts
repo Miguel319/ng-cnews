@@ -17,7 +17,9 @@ export class NewsService {
     const articles: Article[] = [];
 
     for (let obj of articleObj["articles"]) {
-      articles.push(obj);
+      let article: Article = obj;
+      article.source = obj.source.name;
+      articles.push(article);
     }
 
     return articles;
