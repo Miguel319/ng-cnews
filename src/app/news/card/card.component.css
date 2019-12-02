@@ -1,42 +1,13 @@
-/*b {
-  margin-right: 3px;
-}
-
 .card {
-  margin: 0 auto;
-  background: #ecede8;
-  width: 300px;
-  box-sizing: border-box;
-  text-align: center;
-  box-shadow: 0 10px 40px (rgba(0, 0, 0, .5));
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 }
 
-.card .layer {
-  z-index: 1;
-  top: 100%;
-  width: 100%;
-}
-
-.card .content {
-  z-index: 2;
-}
-
-img {
-  width: 100%;
-  min-height: 290px;
-}
-*/
-
-.card {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-
-img {
+.l-img {
   width: 100%;
   display: block;
   max-height: 200px;
   min-height: 200px;
+  cursor: pointer;
 }
 
 .card-content {
@@ -50,7 +21,7 @@ img {
   margin-top: 0;
 }
 
-a {
+.view-article {
   margin-left: 10px;
   cursor: pointer;
 }
@@ -61,3 +32,4 @@ a {
   font-size: 1.1em;
   border-bottom: 2px solid #ccc;
 }
+

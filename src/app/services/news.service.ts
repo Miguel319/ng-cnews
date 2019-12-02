@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Article } from "../models/article.model";
-import { map } from "rxjs/operators";
+import { map, count } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -25,9 +25,9 @@ export class NewsService {
     return articles;
   }
 
-  getTopHeadlinesInTheUs() {
+  getTopHeadlinesByCountry(country: string) {
     return this.http
-      .get(`${this.topHeadlines}?country=us&apiKey=${this.apiKey}`)
+      .get(`${this.topHeadlines}?country=${country}&apiKey=${this.apiKey}`)
       .pipe(map(this.mapArticles));
   }
 }

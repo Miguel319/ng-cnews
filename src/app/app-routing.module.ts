@@ -5,12 +5,12 @@ import { BreakingComponent } from "./components/news/breaking/breaking.component
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
-  { path: "breaking-news", component: BreakingComponent },
+  { path: "breaking-news/:country", component: BreakingComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: "reload" })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
