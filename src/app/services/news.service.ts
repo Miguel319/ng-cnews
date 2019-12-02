@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Article } from "../models/article.model";
-import { map, count } from "rxjs/operators";
+import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -25,13 +26,45 @@ export class NewsService {
     return articles;
   }
 
-  getTopHeadlinesByCountry(country: string) {
+  getTopHeadlinesByCountry(country: string): Observable<Article[]> {
     return this.http
       .get(`${this.topHeadlines}?country=${country}&apiKey=${this.apiKey}`)
       .pipe(map(this.mapArticles));
   }
 
-  /*getDetails(title: string) {
-    return this.http.get(`${}`)
-  }*/
+  getEverything(about: string): Observable<Article[]> {
+    let response: Observable<Article[]> = undefined;
+    const defaultResponse = this.http
+      .get(`${this.everything}?q=bitcoin&apiKey=${this.apiKey}`)
+      .pipe(map(this.mapArticles));
+
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    switch (about) {
+      case "bitcoin":
+        response = defaultResponse;
+        break;
+      case "apple":
+        response = this.http
+          .get(
+            `${this.everything}?q=apple&from=${year}-${month}-${day}&sortBy=popularity&apiKey=${this.apiKey}`
+          )
+          .pipe(map(this.mapArticles));
+        break;
+      case "nyt":
+        response = this.http
+          .get(
+            `${this.everything}?domains=wsj.com,nytimes.com&apiKey=${this.apiKey}`
+          )
+          .pipe(map(this.mapArticles));
+        break;
+      default:
+        response = defaultResponse;
+    }
+
+    return response;
+  }
 }

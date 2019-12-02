@@ -18,21 +18,28 @@ export class NewsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.fetchData();
-    setTimeout(() => console.log(this.article), 500);
   }
 
   fetchData() {
     const country = this.activatedRouted.snapshot.paramMap.get("country");
     const myIndex = this.activatedRouted.snapshot.paramMap.get("id");
 
-    console.log(country);
-    console.log(myIndex);
+    if (country) {
+      this.newsService
+        .getTopHeadlinesByCountry(country)
+        .subscribe(
+          (res: Article[]) =>
+            (this.article = res.filter((v, i) => i === Number(myIndex))[0])
+        );
+    } else {
+      const about = this.activatedRouted.snapshot.paramMap.get("op");
 
-    this.newsService
-      .getTopHeadlinesByCountry(country)
-      .subscribe(
-        (res: Article[]) =>
-          (this.article = res.filter((v, i) => i === Number(myIndex))[0])
-      );
+      this.newsService
+        .getEverything(about)
+        .subscribe(
+          (res: Article[]) =>
+            (this.article = res.filter((v, i) => i === Number(myIndex))[0])
+        );
+    }
   }
 }

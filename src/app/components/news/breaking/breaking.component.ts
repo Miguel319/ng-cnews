@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NewsService } from "../../../services/news.service";
 import { Article } from "../../../models/article.model";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-breaking",
@@ -25,15 +25,14 @@ export class BreakingComponent implements OnInit {
     this.country = countryParam;
 
     this.newsService.getTopHeadlinesByCountry(countryParam).subscribe(
-      (res: Article[]) => {
-        this.articles = res;
-        console.log(res);
-      },
+      (res: Article[]) => (this.articles = res),
       err => console.log(err)
     );
   }
 
   viewDetails(event: any) {
-    this.router.navigateByUrl(`/breaking-news/${this.country}/details/${event}`);
+    this.router.navigateByUrl(
+      `/breaking-news/${this.country}/details/${event}`
+    );
   }
 }

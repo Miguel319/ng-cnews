@@ -10,6 +10,8 @@ import { BreakingComponent } from "./components/news/breaking/breaking.component
 import { HomeComponent } from "./components/home/home.component";
 import { CountryScanPipe } from './pipes/country-scan.pipe';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { EverythingComponent } from './components/everything/everything.component';
+import { AboutScanPipe } from './pipes/about-scan.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NewsDetailsComponent } from './components/news-details/news-details.com
     BreakingComponent,
     HomeComponent,
     CountryScanPipe,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    EverythingComponent,
+    AboutScanPipe
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

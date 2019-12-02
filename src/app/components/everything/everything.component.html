@@ -1,0 +1,23 @@
+<div class="options">
+  <button>News about <i class="fas fa-caret-down"></i></button>
+  <ul class="menu">
+    <li><button (click)="getNews('bitcoin')">Bitcoin</button></li>
+    <li>
+      <button (click)="getNews('apple')">Apple</button>
+    </li>
+    <li>
+      <button (click)="getNews('nyt')">
+        WSJ & NY Times
+      </button>
+    </li>
+  </ul>
+  <h1 class="title">News about {{ about | aboutScan }}</h1>
+</div>
+<div class="cards" *ngIf="articles">
+  <app-card
+    *ngFor="let article of articles; let i = index"
+    [article]="article"
+    (cardChange)="viewDetails($event)"
+    [i]="i"
+  ></app-card>
+</div>
