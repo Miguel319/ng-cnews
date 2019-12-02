@@ -8,6 +8,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { CardComponent } from "./news/card/card.component";
 import { BreakingComponent } from "./components/news/breaking/breaking.component";
 import { HomeComponent } from "./components/home/home.component";
+import { CountryScanPipe } from './pipes/country-scan.pipe';
+import { NewsDetailsComponent } from './components/news-details/news-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HomeComponent } from "./components/home/home.component";
     NavbarComponent,
     CardComponent,
     BreakingComponent,
-    HomeComponent
+    HomeComponent,
+    CountryScanPipe,
+    NewsDetailsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

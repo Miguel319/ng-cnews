@@ -1,0 +1,16 @@
+<div *ngIf="article">
+  <h1>{{ article.title }}</h1>
+
+  <h5>By {{ article.author }}</h5>
+
+  <h5><i class="far fa-calendar-alt"></i> {{ article.publishedAt | date }}</h5>
+
+  <hr />
+
+  <img [src]="article.urlToImage" alt="{{ article.tile }}" />
+
+  <p>
+    {{ article.content }} +
+    <a href="{{ article.url }}">View whole article...</a>
+  </p>
+</div>

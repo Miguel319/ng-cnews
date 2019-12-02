@@ -30,4 +30,8 @@ export class NewsService {
       .get(`${this.topHeadlines}?country=${country}&apiKey=${this.apiKey}`)
       .pipe(map(this.mapArticles));
   }
+
+  /*getDetails(title: string) {
+    return this.http.get(`${}`)
+  }*/
 }

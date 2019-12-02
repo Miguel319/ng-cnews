@@ -1,7 +1,7 @@
-import { Component, OnInit, OnChanges, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NewsService } from "../../../services/news.service";
 import { Article } from "../../../models/article.model";
-import { ActivatedRoute, Router, ParamMap } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-breaking",
@@ -22,7 +22,7 @@ export class BreakingComponent implements OnInit {
     if (countryParam)
       this.router.navigateByUrl(`breaking-news/${countryParam}`);
 
-    this.determineCountry(countryParam);
+    this.country = countryParam;
 
     this.newsService.getTopHeadlinesByCountry(countryParam).subscribe(
       (res: Article[]) => {
@@ -33,27 +33,7 @@ export class BreakingComponent implements OnInit {
     );
   }
 
-  determineCountry(countryParam: string) {
-    const us = "The United States";
-
-    switch (countryParam) {
-      case "us":
-        this.country = us;
-        break;
-      case "ca":
-        this.country = "Canada";
-        break;
-      case "mx":
-        this.country = "Mexico";
-        break;
-      case "ar":
-        this.country = "Argentina";
-        break;
-      case "ve":
-        this.country = "Venezuela";
-        break;
-      default:
-        this.country = us;
-    }
+  viewDetails(event: any) {
+    this.router.navigateByUrl(`/breaking-news/${this.country}/details/${event}`);
   }
 }

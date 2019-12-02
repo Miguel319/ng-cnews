@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Article } from "../../models/article.model";
 
 @Component({
@@ -8,8 +8,14 @@ import { Article } from "../../models/article.model";
 })
 export class CardComponent implements OnInit {
   @Input() article: Article;
+  @Input("i") index: number;
+  @Output() cardChange: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {}
 
   ngOnInit() {}
+
+  viewDetails() {
+    this.cardChange.emit(this.index);
+  }
 }
