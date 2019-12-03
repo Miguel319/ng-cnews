@@ -13,6 +13,7 @@ import { NewsDetailsComponent } from './components/news-details/news-details.com
 import { EverythingComponent } from './components/everything/everything.component';
 import { AboutScanPipe } from './pipes/about-scan.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NewsDetailsComponent,
     EverythingComponent,
     AboutScanPipe,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

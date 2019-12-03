@@ -4,6 +4,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { BreakingComponent } from "./components/news/breaking/breaking.component";
 import { NewsDetailsComponent } from "./components/news-details/news-details.component";
 import { EverythingComponent } from "./components/everything/everything.component";
+import { AboutComponent } from "./components/about/about.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: NewsDetailsComponent
   },
   { path: "everything/:about", component: EverythingComponent },
+  { path: "about", component: AboutComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
 

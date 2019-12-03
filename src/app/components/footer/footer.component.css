@@ -6,19 +6,24 @@ body {
 
 
 .footer {
-  background: #d3dbe8;
   width: 100%;
   text-align: center;
-  border: 1px solid #614385;
 }
 
+.powered-by {
+  padding-top: 10px;
+}
+
+.wrap {
+  background: #dfd5e3;
+  border: 1px solid #835196;
+}
 
 .footer .footer-bottom {
   height: 50px;
   width: 100%;
   text-align: center;
   bottom: 0px;
-  background: #d3dbe8;
   left: 0px;
   padding-top: 10px;
 }
