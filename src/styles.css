@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
+  --primary: #333;
+  --secondary: #444;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+  --light-primary: #fafafa;
+  --light-secondary: #f5f7f9;
+  --gray: #bec5d1;
   font-family: 'Bai Jamjuree',
     sans-serif;
   background: #f5f7f9;

@@ -6,7 +6,7 @@
     alt="{{ article.title }}"
   />
   <div class="card-content">
-    <h3>{{ article.title }}</h3>
+    <a class="article-title" (click)="viewDetails()">{{ article.title }}</a>
 
     <p>{{ article.content | slice: 0:71 }}...</p>
   </div>

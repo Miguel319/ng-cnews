@@ -15,8 +15,16 @@ body {
 }
 
 .wrap {
-  background: #dfd5e3;
-  border: 1px solid #835196;
+  background: var(--primary);
+  color: var(--light-primary);
+}
+
+a {
+  color: var(--light-primary);
+}
+
+a:hover {
+  color: var(--light-secondary);
 }
 
 .footer .footer-bottom {

@@ -1,12 +1,12 @@
 <div class="options">
   <button>News about <i class="fas fa-caret-down"></i></button>
   <ul class="menu">
-    <li><button (click)="getNews('bitcoin')">Bitcoin</button></li>
-    <li>
-      <button (click)="getNews('apple')">Apple</button>
+    <li (click)="getNews('bitcoin')"><button>Bitcoin</button></li>
+    <li (click)="getNews('apple')">
+      <button>Apple</button>
     </li>
-    <li>
-      <button (click)="getNews('nyt')">
+    <li (click)="getNews('nyt')">
+      <button>
         WSJ & NY Times
       </button>
     </li>

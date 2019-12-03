@@ -39,14 +39,13 @@
 }
 
 .options li:hover {
-  background: #614385;
+  background: #232526;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #516395, #614385);
+  background: -webkit-linear-gradient(to right, #414345, #232526);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #516395, #614385);
+  background: linear-gradient(to right, #414345, #232526);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #fafafa !important;
+  color: #fafafa;
   cursor: pointer;
 }
 
@@ -79,7 +78,6 @@
 
 
 .menu>li>button {
-  color: #000;
   border: 0;
   text-decoration: none;
 }
@@ -91,18 +89,17 @@ button {
   padding: 7px;
   background: #fafafa;
   border-radius: 10px;
-  border: 2px solid #614385;
+  border: 2px solid #232526;
   text-decoration: none;
 }
 
 button:hover {
-  background: #614385;
+  background: #232526;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #516395, #614385);
+  background: -webkit-linear-gradient(to right, #414345, #232526);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #516395, #614385);
+  background: linear-gradient(to right, #414345, #232526);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   color: #fafafa;
 }
 

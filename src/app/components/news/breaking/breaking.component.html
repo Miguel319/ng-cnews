@@ -1,20 +1,20 @@
 <div class="options">
   <button>Breaking News in: <i class="fas fa-caret-down"></i></button>
   <ul class="menu">
-    <li><button (click)="getNews('us')">United States</button></li>
-    <li>
-      <button (click)="getNews('ca')">Canada</button>
+    <li (click)="getNews('us')"><button>United States</button></li>
+    <li (click)="getNews('ca')">
+      <button>Canada</button>
     </li>
-    <li>
-      <button (click)="getNews('mx')">
+    <li (click)="getNews('mx')">
+      <button>
         Mexico
       </button>
     </li>
-    <li>
-      <button (click)="getNews('ar')">Argentina</button>
+    <li (click)="getNews('ar')">
+      <button>Argentina</button>
     </li>
-    <li>
-      <button (click)="getNews('ve')">Venezuela</button>
+    <li (click)="getNews('ve')">
+      <button>Venezuela</button>
     </li>
   </ul>
   <h1 class="title">Breaking news in {{ country | countryScan }}</h1>

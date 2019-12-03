@@ -5,7 +5,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
-import { CardComponent } from "./news/card/card.component";
 import { BreakingComponent } from "./components/news/breaking/breaking.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CountryScanPipe } from './pipes/country-scan.pipe';
@@ -14,6 +13,7 @@ import { EverythingComponent } from './components/everything/everything.componen
 import { AboutScanPipe } from './pipes/about-scan.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { CardComponent } from './components/news/card/card.component';
 
 @NgModule({
   declarations: [

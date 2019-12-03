@@ -5,3 +5,7 @@ p {
 .list-title {
   font-weight: bold;
 }
+
+a {
+  color: var(--primary);
+}

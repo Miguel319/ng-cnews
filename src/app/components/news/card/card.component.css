@@ -1,0 +1,66 @@
+.card {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.l-img {
+  width: 100%;
+  display: block;
+  max-height: 200px;
+  min-height: 200px;
+  cursor: pointer;
+}
+
+.card-content {
+  line-height: 1.5;
+  font-size: 0.9em;
+  padding: 15px;
+
+}
+
+.card-content:hover {
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fafafa;
+}
+
+.card-info:hover {
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fafafa;
+}
+
+img:hover {
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.card-content>p {
+  margin-top: 0;
+}
+
+.view-article {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.card-info {
+  display: flex;
+  background: #eee;
+  font-size: 1.1em;
+  border-bottom: 2px solid #ccc;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  text-decoration: underline;
+}

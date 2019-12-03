@@ -5,7 +5,7 @@
 }
 
 #myNav {
-  margin-bottom: 39.5px;
+  margin-bottom: 78.5px;
 }
 
 nav {
@@ -16,7 +16,11 @@ nav {
   max-height: 6vh;
   position: fixed;
   top: 0;
-  background: #fafafa;
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526);
   width: 100%;
   z-index: 1;
 }
@@ -30,6 +34,11 @@ nav {
 
 #logo a {
   text-decoration: none;
+  color: var(--light-primary);
+}
+
+#logo a:hover {
+  color: var(--gray);
 }
 
 #nav-links {
@@ -43,9 +52,15 @@ nav {
   list-style: none;
 }
 
+#nav-links a:hover {
+  color: var(--gray);
+  font-weight: bold;
+}
+
 #nav-links a {
   cursor: pointer;
   text-decoration: none;
+  color: var(--light-primary);
   font-size: 16px;
   letter-spacing: 2px;
 }
@@ -62,6 +77,15 @@ nav {
   }
 }
 
-#line {
-  border: 1.2px solid #614385;
+
+
+@media screen and (min-width: 300px) and (max-width: 530px) {
+  #nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  #nav-links a {
+    font-size: 13px;
+  }
 }
