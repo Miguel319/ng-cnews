@@ -20,6 +20,10 @@ export class NewsService {
     for (let obj of articleObj["articles"]) {
       let article: Article = obj;
       article.source = obj.source.name;
+
+      if (!Boolean(article.urlToImage)) {
+        article.urlToImage = "../../assets/img/no-img.jpg";
+      }
       articles.push(article);
     }
 
