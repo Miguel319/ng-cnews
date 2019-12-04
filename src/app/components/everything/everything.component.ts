@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 export class EverythingComponent implements OnInit {
   articles: Article[] = [];
   about: string = "";
+  loading: boolean;
 
   constructor(private newsService: NewsService, private router: Router) {}
 
@@ -19,8 +20,13 @@ export class EverythingComponent implements OnInit {
   }
 
   getNews(aboutArg?: string) {
+    this.loading = true;
+
     this.newsService.getEverything(aboutArg).subscribe(
-      (res: Article[]) => (this.articles = res),
+      (res: Article[]) => {
+        this.articles = res;
+        this.loading = false;
+      },
       err => console.log(err)
     );
 

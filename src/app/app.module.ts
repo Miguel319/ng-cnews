@@ -14,6 +14,7 @@ import { AboutScanPipe } from './pipes/about-scan.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { CardComponent } from './components/news/card/card.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CardComponent } from './components/news/card/card.component';
     EverythingComponent,
     AboutScanPipe,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    LoadingComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 export class BreakingComponent implements OnInit {
   articles: Article[] = [];
   country: string = "";
+  loading: boolean;
 
   constructor(private newsService: NewsService, private router: Router) {}
 
@@ -19,13 +20,18 @@ export class BreakingComponent implements OnInit {
   }
 
   getNews(countryParam?: string) {
+    this.loading = true;
+
     if (countryParam)
       this.router.navigateByUrl(`breaking-news/${countryParam}`);
 
     this.country = countryParam;
 
     this.newsService.getTopHeadlinesByCountry(countryParam).subscribe(
-      (res: Article[]) => (this.articles = res),
+      (res: Article[]) => {
+        this.articles = res;
+        this.loading = false;
+      },
       err => console.log(err)
     );
   }

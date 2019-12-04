@@ -1,29 +1,33 @@
-<div class="options">
-  <button>Breaking News in: <i class="fas fa-caret-down"></i></button>
-  <ul class="menu">
-    <li (click)="getNews('us')"><button>United States</button></li>
-    <li (click)="getNews('ca')">
-      <button>Canada</button>
-    </li>
-    <li (click)="getNews('mx')">
-      <button>
-        Mexico
-      </button>
-    </li>
-    <li (click)="getNews('ar')">
-      <button>Argentina</button>
-    </li>
-    <li (click)="getNews('ve')">
-      <button>Venezuela</button>
-    </li>
-  </ul>
-  <h1 class="title">Breaking news in {{ country | countryScan }}</h1>
-</div>
-<div class="cards" *ngIf="articles">
-  <app-card
-    *ngFor="let article of articles; let i = index"
-    [article]="article"
-    (cardChange)="viewDetails($event)"
-    [i]="i"
-  ></app-card>
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="!loading">
+  <div class="options">
+    <button>Breaking News in: <i class="fas fa-caret-down"></i></button>
+    <ul class="menu">
+      <li (click)="getNews('us')"><button>United States</button></li>
+      <li (click)="getNews('ca')">
+        <button>Canada</button>
+      </li>
+      <li (click)="getNews('mx')">
+        <button>
+          Mexico
+        </button>
+      </li>
+      <li (click)="getNews('ar')">
+        <button>Argentina</button>
+      </li>
+      <li (click)="getNews('ve')">
+        <button>Venezuela</button>
+      </li>
+    </ul>
+    <h1 class="title">Breaking news in {{ country | countryScan }}</h1>
+  </div>
+  <div class="cards" *ngIf="articles">
+    <app-card
+      *ngFor="let article of articles; let i = index"
+      [article]="article"
+      (cardChange)="viewDetails($event)"
+      [i]="i"
+    ></app-card>
+  </div>
 </div>

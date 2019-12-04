@@ -1,4 +1,6 @@
-<div *ngIf="article">
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="article && !loading">
   <h1>{{ article.title }}</h1>
 
   <h5>By {{ article.author }}</h5>
@@ -7,7 +9,7 @@
 
   <hr />
 
-  <img [src]="article.urlToImage" alt="{{ article.tile }}" />
+  <img [src]="article.urlToImage" alt="{{ article.title }}" />
 
   <p>
     {{ article.content }} +

@@ -1,27 +1,25 @@
 # NgCnews
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+This Angular 8 project utilizes the [News API](https://newsapi.org/) to get its data.
 
-## Development server
+## News By Country
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+URL = https://newsapi.org/v2/top-headlines
 
-## Code scaffolding
+|           Country                |                    Endpoint
+|----------------------------------| -----------------------------------------|
+| United States                    | URL+/?country=us&apiKey=apiKey           |
+| Canada                           | URL+/?country=ca&apiKey=apiKey           |
+| Argentina                        | URL+/?country=ar&apiKey=apiKey           |
+| Mexico                           | URL+/?country=mx&apiKey=apiKey           |
+| Venezuela                        | URL+/?country=ve&apiKey=apiKey           |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Everything
 
-## Build
+URL = https://newsapi.org/v2/everything
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+|           About                 |                    Endpoint
+|---------------------------------| ------------------------------------------------------------------|
+| Bitcoin                         | URL+/?q=bitcoin&apiKey=apiKey                                     |
+| Apple                           | URL+/?q=apple&from=yyyy-mm-dd&sortBy=popularity&apiKey=apiKey     |
+| WSJ & New York Times            | URL+/?domains=wsj.com,nytimes.com&apiKey=apiKey                   |

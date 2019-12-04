@@ -10,6 +10,7 @@ import { NewsService } from "../../services/news.service";
 })
 export class NewsDetailsComponent implements OnInit {
   article: Article;
+  loading: boolean;
 
   constructor(
     private activatedRouted: ActivatedRoute,
@@ -21,25 +22,28 @@ export class NewsDetailsComponent implements OnInit {
   }
 
   fetchData() {
+    this.loading = true;
     const country = this.activatedRouted.snapshot.paramMap.get("country");
     const myIndex = this.activatedRouted.snapshot.paramMap.get("id");
 
     if (country) {
-      this.newsService
-        .getTopHeadlinesByCountry(country)
-        .subscribe(
-          (res: Article[]) =>
-            (this.article = res.filter((v, i) => i === Number(myIndex))[0])
-        );
+      this.newsService.getTopHeadlinesByCountry(country).subscribe(
+        (res: Article[]) => {
+          this.article = res.filter((v, i) => i === Number(myIndex))[0];
+          this.loading = false;
+        },
+        err => console.log(err)
+      );
     } else {
       const about = this.activatedRouted.snapshot.paramMap.get("op");
 
-      this.newsService
-        .getEverything(about)
-        .subscribe(
-          (res: Article[]) =>
-            (this.article = res.filter((v, i) => i === Number(myIndex))[0])
-        );
+      this.newsService.getEverything(about).subscribe(
+        (res: Article[]) => {
+          this.article = res.filter((v, i) => i === Number(myIndex))[0];
+          this.loading = false;
+        },
+        err => console.log(err)
+      );
     }
   }
 }
