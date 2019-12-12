@@ -48,11 +48,19 @@ ul {
     justify-content: center;
   }
 
+  .main-section {
+    margin-bottom: -200px;
+  }
+
+  .t-main {
+    font-size: 2rem !important;
+  }
+
   .main-img {
 
     min-height: 190px;
     max-height: 190px;
-    min-width: 190px;
+    min-width: 120px;
   }
 }
 

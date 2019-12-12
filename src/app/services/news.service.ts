@@ -44,7 +44,7 @@ export class NewsService {
 
     const date = new Date();
     const day = date.getDate();
-    const month = date.getMonth();
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
 
     switch (about) {
@@ -54,7 +54,7 @@ export class NewsService {
       case "apple":
         response = this.http
           .get(
-            `${this.everything}?q=apple&from=${year}-${month}-${day}&sortBy=popularity&apiKey=${this.apiKey}`
+            `${this.everything}?q=apple&from=${year}-${month}-${day}&to=${year}-${month}-${day}&sortBy=popularity&apiKey=${this.apiKey}`
           )
           .pipe(map(this.mapArticles));
         break;
